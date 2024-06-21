@@ -27,7 +27,7 @@ jobs:
       - name: Configure Git
         run: |
           git config --global user.email "agelde@alu.ucam.edu"
-          git config --global user.name "Alejandro Bot Github Actions"
+          git config --global user.name "alexgelde"
 
       - name: Deploy to GitHub Pages
         env:

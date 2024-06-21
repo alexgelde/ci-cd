@@ -24,14 +24,14 @@ jobs:
       - name: Build the project
         run: npm run build
 
-      - name: Configure Git
+      - name: Configure GitHub CLI
         run: |
-          git config --global user.email "agelde@alu.ucam.edu"
-          git config --global user.name "alexgelde"
+          echo "${{ secrets.TOKEN }}" | gh auth login --with-token
 
       - name: Deploy to GitHub Pages
-        env:
-          GITHUB_TOKEN: ${{ secrets.TOKEN }}
         run: |
-          git remote set-url origin https://alexgelde:${{ secrets.TOKEN }}@github.com/alexgelde/ci-cd.git
+          gh repo set-default alexgelde/ci-cd
+          gh auth setup-git
+          git config user.email "agelde@alu.ucam.edu"
+          git config user.name "alexgelde"
           npx gh-pages -d build

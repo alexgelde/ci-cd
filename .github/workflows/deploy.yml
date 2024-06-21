@@ -33,4 +33,5 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
         run: |
+          git remote set-url origin https://${{ secrets.TOKEN }}@github.com/${{ github.repository }}.git
           npx gh-pages -d build

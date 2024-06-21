@@ -1,0 +1,8 @@
+{
+    "homepage": "https://alexgelde.github.io/mi-aplicacion",
+    "scripts": {
+      "predeploy": "npm run build",
+      "deploy": "gh-pages -d build"
+    }
+  }
+  

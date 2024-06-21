@@ -85,4 +85,5 @@ jobs:
           gh auth setup-git
           git config user.email "agelde@alu.ucam.edu"
           git config user.name "alexgelde"
+          npm run deploy
           npx gh-pages -d build
